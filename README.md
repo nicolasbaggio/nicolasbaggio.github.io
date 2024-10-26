@@ -13,3 +13,7 @@ Atualmente, ofereço serviços em plataformas de freelancers, com um histórico 
 ## Diferenciais
 
 Minha familiaridade com **metodologias ágeis**, como **Kanban**, contribui para um planejamento eficaz e uma execução organizada de projetos, assegurando a entrega de resultados contínuos e a melhoria contínua dos processos. Tenho um compromisso constante com a **aprendizagem de novas tecnologias** e a **busca por soluções ideais** para cada desafio, o que me permite adaptar-me rapidamente a diferentes cenários e garantir entregas de alto impacto.
+
+## Tecnologias
+
+<p> <align="left"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="40" height="40"/>  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="40" height="40"/> </p>
