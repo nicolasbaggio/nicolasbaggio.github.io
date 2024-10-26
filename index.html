@@ -8,6 +8,35 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const animatedText = document.getElementById("animated-text");
+        const text = "Procurando um Desenvolvedor "; // Texto antes de "FullStack"
+        const highlightedText = "Full-Stack"; // Texto destacado
+        const questionMark = "?"; // Interrogação
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                // Digita o texto até "FullStack"
+                animatedText.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 100); // Delay entre caracteres
+            } else if (index < text.length + highlightedText.length) {
+                // Digita a palavra "FullStack" com destaque
+                animatedText.innerHTML += `<span class='highlight'>${highlightedText.charAt(index - text.length)}</span>`;
+                index++;
+                setTimeout(type, 100); // Delay constante para "FullStack"
+            } else if (index === text.length + highlightedText.length) {
+                // Adiciona a interrogação e inicia a animação
+                animatedText.innerHTML += `<span class='blink'>${questionMark}</span>`;
+            }
+        }
+
+        type(); // Inicia a animação
+    });
+</script>
+
 <body class="bg-zinc-800">
     <header>
         <img id="logo" src="./logo.png" alt="Logo">
@@ -22,13 +51,13 @@
     </header>
 
     <div id="hero-container" class="hero-container">
-        <h1>Procurando um desenvolvedor FullStack?</h1>
+        <h1 id="animated-text"></h1>
         <svg class="arrows">
             <path class="a1" d="M0 0 L30 32 L60 0"></path>
             <path class="a1" d="M0 20 L30 52 L60 20"></path>
             <path class="a1" d="M0 40 L30 72 L60 40"></path>
         </svg>
-    </div>
+    </div>     
 
     <div id="content-container" class="content-container">
         <div class="image-box">

@@ -70,6 +70,7 @@ li {
     height: auto;
 }
 
+/* Estilos para a hero-container */
 .hero-container {
     height: 100vh;
     display: flex;
@@ -81,7 +82,57 @@ li {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+}
+
+/* Estilos do h1 */
+#animated-text {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    font-size: 70px;
+    background-color: transparent;
+    overflow: hidden; /* Esconde o texto extra durante a animação */
+    white-space: nowrap; /* Impede a quebra de linha */
+}
+
+/* Palavra FullStack em amarelo */
+.fullstack {
+    color: yellow; /* Cor da palavra "FullStack" */
+}
+
+.highlight {
+    color: #ffdd00; /* Amarelo para "FullStack" */
+}
+
+.blink {
+    animation: fade-animation 1s infinite alternate;
+}
+
+@keyframes fade-animation {
+    0% {
+        opacity: 1; /* Totalmente visível */
+    }
+    50% {
+        opacity: 0; /* Invisível */
+    }
+    100% {
+        opacity: 1; /* Volta a ser visível */
+    }
+}
+
+/* Acelerar a animação da escrita */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
 }
 
 h1 {
