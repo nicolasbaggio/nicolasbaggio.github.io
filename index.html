@@ -11,30 +11,47 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const animatedText = document.getElementById("animated-text");
-        const text = "Procurando um Desenvolvedor "; // Texto antes de "FullStack"
-        const highlightedText = "Full-Stack"; // Texto destacado
-        const questionMark = "?"; // Interrogação
+        const text = "Procurando um Desenvolvedor ";
+        const highlightedText = "Back-end";
+        const questionMark = "?";
         let index = 0;
 
         function type() {
             if (index < text.length) {
-                // Digita o texto até "FullStack"
                 animatedText.innerHTML += text.charAt(index);
                 index++;
-                setTimeout(type, 100); // Delay entre caracteres
+                setTimeout(type, 100);
             } else if (index < text.length + highlightedText.length) {
-                // Digita a palavra "FullStack" com destaque
                 animatedText.innerHTML += `<span class='highlight'>${highlightedText.charAt(index - text.length)}</span>`;
                 index++;
-                setTimeout(type, 100); // Delay constante para "FullStack"
+                setTimeout(type, 100);
             } else if (index === text.length + highlightedText.length) {
-                // Adiciona a interrogação e inicia a animação
                 animatedText.innerHTML += `<span class='blink'>${questionMark}</span>`;
             }
         }
 
-        type(); // Inicia a animação
+        type();
     });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const hiddenContents = document.querySelectorAll(".hidden-content");
+
+    function revealOnScroll() {
+        hiddenContents.forEach((content) => {
+            const contentPosition = content.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3; // Ajuste o valor conforme necessário
+
+            if (contentPosition < screenPosition) {
+                content.classList.add("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+});
+
 </script>
 
 <body class="bg-zinc-800">
@@ -59,7 +76,7 @@
         </svg>
     </div>     
 
-    <div id="content-container" class="content-container">
+    <div id="content-container" class="content-container hidden-content">
         <div class="image-box">
             <img src="./perfil.png" alt="Foto de Perfil">
         </div>
@@ -77,8 +94,8 @@
             </div>
 
             <div class="column sobre">
-                <p>Sou um estudante de programação com conhecimento sólido em tecnologias de front-end e back-end, com foco principal em desenvolvimento Web e habilidades complementares em desenvolvimento mobile. Minhas áreas de estudo incluem JavaScript e TypeScript para o front-end, além de Node.js e Java para o back-end.</p>
-                <p>Atualmente, trabalho em projetos em plataformas de freelancers, realizando integrações de APIs, correções de bugs e desenvolvendo novas funcionalidades em aplicações existentes. Minha familiaridade com metodologias ágeis, como Kanban, contribui para um planejamento eficaz e o gerenciamento de projetos, assegurando entregas contínuas e melhorias de processos.</p>
+                <p>Sou um Desenvolvedor Back-end, apaixonado por transformar desafios em soluções práticas e eficientes. Este espaço é dedicado aos meus projetos, onde aplico conhecimentos em interfaces web responsivas com HTML e CSS, funcionalidades dinâmicas usando JavaScript, e resolução de problemas com Java e lógica de programação.</p>
+                <p>Focado em aprimorar habilidades e aprender novas tecnologias, tenho uma base sólida em Matemática e experiência com metodologias ágeis, como Kanban, garantindo organização e entregas de alto impacto. Meu compromisso com a excelência me permite adaptar rapidamente a novos cenários e oferecer soluções inovadoras.</p>
             </div>
 
             <div class="column contato">
@@ -88,7 +105,7 @@
                     <li><strong>Idade:</strong> 31</li>
                     <li><strong>De:</strong> Brasília, Brasil</li>
                     <li><strong>Email:</strong> <a href="mailto:nicolasbbaggio@gmail.com">nicolasbbaggio@gmail.com</a></li>
-                    <li><strong>Certificado:</strong> <a href="#">Desenvolvedor Full-Stack</a></li>
+                    <!--<li><strong>Certificado:</strong> <a href="#">Desenvolvedor Full-Stack</a></li>-->
                     <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nicolasbaggio">nicolasbaggio</a></li>
                     <li><strong>GitHub:</strong> <a href="https://github.com/nicolasbaggio/">nicolasbaggio</a></li>
                     <li><strong>Instagram:</strong> <a href="https://www.instagram.com/nicolasbbaggio/">@nicolasbbaggio</a></li>
@@ -97,7 +114,7 @@
         </div>
     </div>
 
-    <div id="projetos" class="projetos">
+    <div id="projetos" class="projetos hidden-content">
         <h2>Projetos</h2>
         <div class="project-card">
             <div class="project-image">
@@ -114,6 +131,27 @@
                 <div class="project-links">
                     <a href="https://nicolasbaggio.github.io/ProjetoBatman/" target="_blank">Ir para o site</a>
                     <a href="https://github.com/nicolasbaggio/ProjetoBatman" target="_blank">Repositório front-end</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card2">
+            <div class="project-image">
+                <img src="./logica.jpg" alt="Logica Programacao">
+            </div>
+            <div class="project-description">
+                <h3>Lógica de programação com Java</h3>
+                <p>Este repositório documenta meus estudos de lógica de programação em Java.</p>
+                <p>Ele contém implementações práticas dos fundamentos da linguagem, refletindo meu compromisso com o desenvolvimento de habilidades em programação.</p>
+                <p>Principais tópicos abordados incluem:</p>
+                    <ul>
+                        <li><strong>Variáveis:</strong> tipos primitivos, convenções de nomeação e boas práticas.</li>
+                        <li><strong>Vetores (Arrays):</strong> manipulação de arrays unidimensionais e multidimensionais.</li>
+                        <li><strong>Estruturas Condicionais:</strong> if/else e switch/case com boas práticas.</li>
+                        <li><strong>Estruturas de Repetição:</strong> for, while e do-while com aplicações práticas.</li>
+                    </ul>
+                <div class="project-links">
+                    <a href="https://github.com/nicolasbaggio/EstudosJava" target="_blank">Ver Repositório no GitHub</a>
                 </div>
             </div>
         </div>

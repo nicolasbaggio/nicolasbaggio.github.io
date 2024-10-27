@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 * {
     margin: 0;
@@ -8,7 +9,7 @@
 }
 
 body {
-    background-color: #121212; /* Fundo da página */
+    background-color: #121212;
     margin: 0;
     padding: 0;
     font-family: "Oswald", sans-serif;
@@ -19,7 +20,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: black; 
+    background-color: black;
 }
 
 nav {
@@ -51,18 +52,18 @@ li {
 }
 
 .image-box {
-    width: 10%; /* Ajuste conforme necessário */
-    margin: 0 auto; /* Centraliza a caixa na página */
-    padding: 2px; /* Espaçamento interno */
-    border: 4px solid #0d3b3b; /* Borda azul esverdeado com espessura de 4px */
-    display: flex; /* Para centralizar a imagem */
-    justify-content: center; /* Centraliza horizontalmente */
-    background-color: transparent; /* Fundo transparente */
+    width: 10%;
+    margin: 0 auto;
+    padding: 2px;
+    border: 4px solid #ffdd00;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
 }
 
 .image-box img {
-    max-width: 100%; /* Garante que a imagem não exceda a largura da caixa */
-    height: auto; /* Mantém a proporção da imagem */
+    max-width: 100%;
+    height: auto;
 }
 
 #logo {
@@ -70,7 +71,6 @@ li {
     height: auto;
 }
 
-/* Estilos para a hero-container */
 .hero-container {
     height: 100vh;
     display: flex;
@@ -84,23 +84,21 @@ li {
     background-size: cover;
 }
 
-/* Estilos do h1 */
 #animated-text {
     font-family: 'Oswald', sans-serif;
     color: #fff;
     font-size: 70px;
     background-color: transparent;
-    overflow: hidden; /* Esconde o texto extra durante a animação */
-    white-space: nowrap; /* Impede a quebra de linha */
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-/* Palavra FullStack em amarelo */
 .fullstack {
-    color: yellow; /* Cor da palavra "FullStack" */
+    color: yellow;
 }
 
 .highlight {
-    color: #ffdd00; /* Amarelo para "FullStack" */
+    color: #ffdd00;
 }
 
 .blink {
@@ -109,17 +107,16 @@ li {
 
 @keyframes fade-animation {
     0% {
-        opacity: 1; /* Totalmente visível */
+        opacity: 1;
     }
     50% {
-        opacity: 0; /* Invisível */
+        opacity: 0;
     }
     100% {
-        opacity: 1; /* Volta a ser visível */
+        opacity: 1;
     }
 }
 
-/* Acelerar a animação da escrita */
 @keyframes typing {
     from {
         width: 0;
@@ -136,7 +133,7 @@ li {
 }
 
 h1 {
-    font-family: 'Oswald', sans-serif;
+    font-family: "Lora", sans-serif;
     color: #fff;
     font-size: 70px;
     background-color: transparent;
@@ -165,11 +162,21 @@ h1 {
     100% { opacity: 0; }
 }
 
-/* Container principal */
+.hidden-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .content-container {
     padding: 40px 0;
     width: 100%;
-    background-color: transparent; 
+    background-color: transparent;
 }
 
 .container {
@@ -182,18 +189,16 @@ h1 {
     padding: 20px;
     gap: 20px;
     box-sizing: border-box;
-    border: 3px solid #0d3b3b; /* Borda azul esverdeado */
+    border: 3px solid #ffdd00;
     border-radius: 8px;
 }
 
-/* Colunas */
 .column {
     flex: 1;
     padding: 0 20px;
     position: relative;
 }
 
-/* Linhas separadoras entre colunas */
 .column:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -201,13 +206,12 @@ h1 {
     top: 0;
     height: 100%;
     width: 4px;
-    background-color: #0d3b3b; /* Linha azul esverdeado */
+    background-color: #ffdd00;
 }
 
-/* Coluna de tecnologias em duas colunas */
 .tecnologias ul {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Divide em duas colunas */
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     padding: 0;
 }
@@ -217,87 +221,82 @@ h1 {
     align-items: center;
     gap: 10px;
     color: white;
-    font-family: "Oswald", sans-serif;
+    font-family: "Lora", sans-serif;
 }
 
-/* Títulos das colunas */
 h2 {
-    text-align: center;  /* Centraliza o título */
-    font-size: 2.5em;    /* Aumenta o tamanho da fonte (ajuste conforme necessário) */
-    color: white;        /* Mantém o texto na cor branca (ou ajuste a cor conforme necessário) */
-    margin-bottom: 20px; /* Espaçamento inferior para separação */
+    text-align: center;
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 20px;
 }
 
 .column h2 {
     font-size: 2em;
     margin-bottom: 20px;
     color: white;
-    font-family: "Oswald", sans-serif;
+    font-family: "Lora", sans-serif;
 }
 
 .contato h2 {
-    text-align: center; /* Centraliza o título na coluna Sobre/Contato */
+    text-align: center;
 }
 
-/* Conteúdo das colunas */
 .sobre p {
     color: white;
     line-height: 1.5;
     margin-bottom: 20px;
-    font-family: "Oswald", sans-serif;
-    font-size: 20px; /* Define o tamanho da fonte para 20px */
+    font-family: "Lora", sans-serif;
+    font-size: 20px;
 }
 
 .contato ul {
     display: flex;
-    flex-direction: column; /* Alinha os itens um abaixo do outro */
-    gap: 2px; /* Espaçamento entre os itens */
+    flex-direction: column;
+    gap: 2px;
 }
 
 .contato li {
     color: white;
     margin-bottom: 17px;
-    font-family: "Oswald", sans-serif;
+    font-family: "Lora", sans-serif;
     font-size: 20px;
 }
 
 .contato ul li {
-    color: white; /* Cor branca padrão */
-    transition: color 0.3s; /* Transição suave ao passar o mouse */
+    color: white;
+    transition: color 0.3s;
 }
 
 .contato ul li strong {
-    font-weight: bold; /* Parte antes dos dois pontos em negrito */
+    font-weight: bold;
 }
 
 .contato ul li span {
-    font-weight: normal; /* Parte após os dois pontos sem negrito */
-    color: white; /* Cor padrão branca */
+    font-weight: normal;
+    color: white;
 }
 
 .contato ul li:hover span {
-    color: #D21617; 
+    color: #D21617;
 }
 
-/* Estilo dos links dentro da coluna Sobre/Contato */
 .contato ul li span a {
-    color: white; /* Links brancos por padrão */
-    text-decoration: none; /* Remove sublinhado */
-    font-weight: normal; /* Certifica que não estarão em negrito */
-    transition: color 0.3s; /* Transição suave para a troca de cor */
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+    transition: color 0.3s;
 }
 
 .contato ul li span a:hover {
     color: #D21617;
 }
 
-/* Links */
 .sobre a, .contato a {
     color: #ffdd00;
     text-decoration: none;
 }
 
-/* Imagens */
 .tecnologias img {
     width: 30px;
     height: 30px;
@@ -306,29 +305,71 @@ h2 {
 
 .projetos {
     color: white;
-    font-family: "Oswald", sans-serif;
+    font-family: "Lora", sans-serif;
     padding: 20px;
     background-color: #121212;
 }
 
-.project-card {
+/* Estilo compartilhado para .project-card e .project-card2 */
+.project-card, .project-card2 {
     max-width: 1100px;
-    margin: 0 auto;
-    border: 2px solid #1e1e1e;  
+    margin: 20px auto; /* Espaçamento entre as "caixas" */
+    border: 2px solid #1e1e1e;
     padding: 20px;
     border-radius: 8px;
-    background-color: #1e1e1e;    
+    background-color: #1e1e1e;
     font-size: 18px;
     color: white;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 15px;
 }
 
-.project-image img {
+/* Estilo para imagens dentro das caixas */
+.project-card .project-image img, .project-card2 .project-image img {
     width: 300px;
     margin-right: 20px;
     border-radius: 8px;
+}
+
+/* Estilo para títulos de projetos */
+.project-card .project-description h3, .project-card2 .project-description h3 {
+    color: #ffdd00;
+    font-size: 24px;
+}
+
+/* Configuração para listas de tópicos em linha dentro de .project-card e .project-card2 */
+.project-card .project-description ul, .project-card2 .project-description ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+
+.project-card .project-description ul li, .project-card2 .project-description ul li {
+    display: inline-flex;
+    font-size: 18px;
+    color: white;
+    font-family: "Lora", sans-serif;
+}
+
+/* Links dos projetos */
+.project-card .project-links, .project-card2 .project-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-card .project-links a, .project-card2 .project-links a {
+    color: #ffdd00;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.project-card .project-links a:hover, .project-card2 .project-links a:hover {
+    color: #D21617;
 }
 
 .project-description h3 {
@@ -336,30 +377,46 @@ h2 {
     font-size: 24px;
 }
 
-.project-description ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.project-description ul li {
+.project-description p {
     margin-bottom: 10px;
 }
 
+.project-description ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.project-description ul li {
+    font-family: "Lora", sans-serif;
+    font-size: 18px;
+    color: white;
+    margin: 0;
+}
+
 .project-links {
-    display: flex;             /* Exibe os itens em uma linha */
-    justify-content: flex-end; /* Alinha os itens à direita */
-    align-items: center;       /* Garante que os itens fiquem centralizados verticalmente */
-    gap: 10px;                 /* Espaçamento entre os itens */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
 }
 
 .project-links a {
     color: #ffdd00;
     text-decoration: none;
-    transition: color 0.3s;    
+    transition: color 0.3s;
 }
 
 .project-links a:hover {
     color: #D21617;
+}
+
+li strong {
+    margin: 0 5px; /* Ajuste o valor conforme necessário */
 }
 
 footer {
@@ -369,7 +426,7 @@ footer {
     color: white;
     font-size: 17px;
     display: flex;
-    flex-direction: column; /* Empilha os itens verticalmente */
+    flex-direction: column;
     align-items: center;
     line-height: 1.8;
 }
@@ -384,11 +441,11 @@ footer {
     color: white;
     text-decoration: none;
     margin: 0 10px;
-    transition: color 0.3s; 
+    transition: color 0.3s;
 }
 
 .footer-links a:hover {
-    color: #D21617; /* Cor vermelha para hover */
+    color: #D21617;
 }
 
 .footer-links img {

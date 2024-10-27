@@ -11,25 +11,22 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const animatedText = document.getElementById("animated-text");
-        const text = "Looking for a "; // Texto antes de "Full-Stack"
-        const highlightedText = "Full-Stack"; // Texto destacado
-        const developerText = " Developer"; // Texto "Developer"
-        const questionMark = "?"; // Interrogação
+        const text = "Looking for a ";
+        const highlightedText = "Back-end";
+        const developerText = " Developer";
+        const questionMark = "?";
         let index = 0;
 
         function type() {
             if (index < text.length) {
-                // Digita o texto "Looking for a "
                 animatedText.innerHTML += text.charAt(index);
                 index++;
-                setTimeout(type, 100); // Delay entre caracteres
+                setTimeout(type, 100);
             } else if (index < text.length + highlightedText.length) {
-                // Digita "Full-Stack" com destaque
                 animatedText.innerHTML += `<span class='highlight'>${highlightedText.charAt(index - text.length)}</span>`;
                 index++;
-                setTimeout(type, 100); // Delay constante para "Full-Stack"
+                setTimeout(type, 100);
             } else if (index === text.length + highlightedText.length) {
-                // Inicia a digitação de "Developer"
                 typeDeveloper();
             }
         }
@@ -38,23 +35,37 @@
             let developerIndex = 0;
             function typeNext() {
                 if (developerIndex < developerText.length) {
-                    // Digita a palavra "Developer"
                     animatedText.innerHTML += developerText.charAt(developerIndex);
                     developerIndex++;
-                    setTimeout(typeNext, 100); // Delay entre caracteres
+                    setTimeout(typeNext, 100);
                 } else {
-                    // Adiciona a interrogação após "Developer" com efeito
                     setTimeout(() => {
                         animatedText.innerHTML += `<span class='blink'>${questionMark}</span>`;
-                    }, 100); // Delay para a interrogação aparecer
+                    }, 100);
                 }
             }
-            typeNext(); // Inicia a animação de "Developer"
+            typeNext();
         }
-
-        type(); // Inicia a animação
+        type();
     });
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hiddenElements = document.querySelectorAll('.hidden-content');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 }); // Ativa quando 10% do elemento está visível
+
+        hiddenElements.forEach(element => observer.observe(element));
+    });
+</script>
+
 
 <body class="bg-zinc-800">
     <header>
@@ -78,7 +89,7 @@
         </svg>
     </div>    
 
-    <div id="content-container" class="content-container">
+    <div id="content-container" class="content-container hidden-content">
         <div class="image-box">
             <img src="../perfil.png" alt="Profile Picture">
         </div>
@@ -96,8 +107,8 @@
             </div>
 
             <div class="column sobre">
-                <p>I am a programming student with solid knowledge in front-end and back-end technologies, primarily focused on web development with complementary skills in mobile development. My areas of study include JavaScript and TypeScript for the front end, as well as Node.js and Java for the back end.</p>
-                <p>Currently, I work on freelance projects, performing API integrations, fixing bugs, and developing new features for existing applications. My familiarity with agile methodologies, such as Kanban, contributes to effective planning and project management, ensuring continuous deliveries and process improvements.</p>
+                <p>I am a Back-end Developer passionate about transforming challenges into practical and efficient solutions. This space is dedicated to my projects, where I apply knowledge in responsive web interfaces using HTML and CSS, dynamic functionalities with JavaScript, and problem-solving with Java and programming logic.</p>
+                <p>Focused on enhancing my skills and learning new technologies, I have a solid foundation in Mathematics and experience with agile methodologies like Kanban, ensuring organization and impactful deliveries. My commitment to excellence allows me to quickly adapt to new scenarios and provide innovative solutions.</p>
             </div>
 
             <div class="column contato">
@@ -107,7 +118,7 @@
                     <li><strong>Age:</strong> 31</li>
                     <li><strong>From:</strong> Brasília, Brazil</li>
                     <li><strong>Email:</strong> <a href="mailto:nicolasbbaggio@gmail.com">nicolasbbaggio@gmail.com</a></li>
-                    <li><strong>Certification:</strong> <a href="#">Full-Stack Developer</a></li>
+                    <!--<li><strong>Certification:</strong> <a href="#">Full-Stack Developer</a></li>-->
                     <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nicolasbaggio">nicolasbaggio</a></li>
                     <li><strong>GitHub:</strong> <a href="https://github.com/nicolasbaggio/">nicolasbaggio</a></li>
                     <li><strong>Instagram:</strong> <a href="https://www.instagram.com/nicolasbbaggio/">@nicolasbbaggio</a></li>
@@ -116,7 +127,7 @@
         </div>
     </div>
 
-    <div id="projetos" class="projetos">
+    <div id="projetos" class="projetos hidden-content">
         <h2>Projects</h2>
         <div class="project-card">
             <div class="project-image">
@@ -136,9 +147,30 @@
                 </div>
             </div>
         </div>
+
+        <div class="project-card2">
+            <div class="project-image">
+                <img src="../logica.jpg" alt="Logica Programacao">
+            </div>
+            <div class="project-description">
+                <h3>Programming Logic with Java</h3>
+                <p>This repository documents my studies of programming logic in Java.</p>
+                <p>It contains practical implementations of the language fundamentals, reflecting my commitment to developing programming skills.</p>
+                <p>Main topics covered include:</p>
+                    <ul>
+                        <li><strong>Variables:</strong> primitive types, naming conventions, and best practices.</li>
+                        <li><strong>Arrays:</strong> manipulation of one-dimensional and multidimensional arrays.</li>
+                        <li><strong>Conditional Structures:</strong> if/else and switch/case with best practices.</li>
+                        <li><strong>Loop Structures:</strong> for, while, and do-while with practical applications.</li>
+                    </ul>
+                <div class="project-links">
+                    <a href="https://github.com/nicolasbaggio/EstudosJava" target="_blank">View Repository on GitHub</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <footer>
+    <footer class="hidden-content">
         <img style="object-fit: contain;" id="logo" src="../logo.png"/>
         <span>All rights reserved ©</span>
         <span>Developed by Nicolas Bastos Baggio</span>   
@@ -152,5 +184,4 @@
         </div>     
     </footer>
 </body>
-
 </html>
